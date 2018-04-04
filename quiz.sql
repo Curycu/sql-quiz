@@ -11,8 +11,7 @@
 
 
 # Q4) where, group by, having, if, left join
-# 고객 status가 'active'이며 2017년 3월 이전 가입한 고객으로 한정하여 
-# 누적도서구매액이 1000원 이상인 경우 grade 'A' 그 외 고객은 grade 'B' 로 
+# 고객 status가 'active'이며 2017년 3월 이전 가입한 고객으로 한정하여 누적도서구매액이 1000원 이상인 경우 grade 'A' 그 외 고객은 grade 'B' 
 # 모든 고객에 대해 `user_id`, `signup`, `grade` 컬럼을 표시해주세요
 
 
