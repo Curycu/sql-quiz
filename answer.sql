@@ -1,4 +1,4 @@
-﻿# Q1) select
+﻿# Q1) select, where
 # 모든 2017년 2월 이후 가입 고객의 id, status, signup을 표시해주세요
 select 
   id, status, signup
