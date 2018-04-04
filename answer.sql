@@ -6,15 +6,15 @@ from ba.interview_user
 where signup >= '2017-02-01 00:00:00'
 ;
 
-# Q2) count, distinct, join
+# Q2) count, distinct
 # 월별 도서구매고객수를 표시해주세요
 select
-  substring(p.pay_date, 1, 7) as `pay_month`, 
-  count(distinct ub.user_id) as `user_count`
-from ba.interview_user_book ub
-join ba.interview_payment p on ub.payment_id = p.id
+  substring(pay_date, 1, 7) as `pay_month`, 
+  count(distinct user_id) as `user_count`
+from ba.interview_payment
+where pay_for = 'book'
 group by
-  substring(p.pay_date, 1, 7)
+  substring(pay_date, 1, 7)
 ;
 
 # Q3) group by, if, sum, left join
