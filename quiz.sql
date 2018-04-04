@@ -2,12 +2,12 @@
 # 모든 2017년 2월 이후 가입 고객의 id, status, signup을 표시해주세요
 
 
-# Q2) group by, if, sum, left join
-# 모든 고객별 id, 누적리디캐시충전액, 누적기기구매액을 표시해주세요
-
-
-# Q3) count, distinct, join
+# Q2) count, distinct, join
 # 월별 도서구매고객수를 표시해주세요
+
+
+# Q3) group by, if, sum, left join
+# 모든 고객별 id, 누적리디캐시충전액, 누적기기구매액을 표시해주세요
 
 
 # Q4) where, group by, having, if, left join
