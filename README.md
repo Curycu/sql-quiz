@@ -1,2 +1,2 @@
 # SQL_quiz
-based on MySQL syntax with most ANSI query style
+based on MySQL syntax with mostly ANSI query style
