@@ -50,7 +50,7 @@ left join (
   having sum(ub.price) >= 1000) g on u.id = g.user_id
 ;
 
-# Q5) multikey left join, sub query
+# Q5) multikey range join, sub query
 # Q4에서 테스트 데이터를 제거해주세요
 select
   u.id as `user_id`,

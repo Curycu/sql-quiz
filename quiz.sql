@@ -16,5 +16,5 @@
 # 모든 고객에 대해 `user_id`, `signup`, `grade` 컬럼을 표시해주세요
 
 
-# Q5) multikey left join, sub query
+# Q5) multikey range join, sub query
 # Q4에서 테스트 데이터를 제거해주세요
