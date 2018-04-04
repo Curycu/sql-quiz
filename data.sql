@@ -1,7 +1,3 @@
-﻿-- drop table `ba`.`interview_tester`;
-truncate `ba`.`interview_tester`;
-select * from `ba`.`interview_tester`;
-
 CREATE TABLE `ba`.`interview_user` (
   `id` int unsigned auto_increment,
   `email` varchar(128) not null,
