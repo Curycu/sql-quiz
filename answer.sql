@@ -6,7 +6,7 @@ from ba.interview_user
 where signup >= '2017-02-01 00:00:00'
 ;
 
-# Q2) count, distinct
+# Q2) count, distinct, where
 # 월별 도서구매고객수를 표시해주세요
 select
   substring(pay_date, 1, 7) as `pay_month`, 
