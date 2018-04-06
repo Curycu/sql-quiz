@@ -41,13 +41,14 @@ from ba.interview_user u
 left join (
   select 
     ub.user_id, 
-    if(count(*) >= 2, 'A', 'B') as `grade`
+    'A' as `grade`
   from ba.interview_user_book ub
   join ba.interview_user u on ub.user_id = u.id 
     and u.status = 'active' 
     and substring(u.signup, 1, 7) < '2017-03'
   group by ub.user_id
-  having sum(ub.price) >= 1000) g on u.id = g.user_id
+  having sum(ub.price) >= 1000 
+    and count(*) >= 2) g on u.id = g.user_id
 ;
 
 # Q5) multikey range join, sub query
@@ -60,7 +61,7 @@ from ba.interview_user u
 left join (
   select 
     ub.user_id, 
-    if(count(*) >= 2, 'A', 'B') as `grade`
+    'A' as `grade`
   from ba.interview_user_book ub
   join ba.interview_user u on ub.user_id = u.id 
     and u.status = 'active' 
@@ -70,5 +71,6 @@ left join (
     from ba.interview_payment p
     join ba.interview_tester t on p.user_id = t.user_id and p.pay_date between t.`from` and t.`to`)
   group by ub.user_id
-  having sum(ub.price) >= 1000) g on u.id = g.user_id
+  having sum(ub.price) >= 1000
+    and count(*) >= 2) g on u.id = g.user_id
 ;
