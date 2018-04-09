@@ -16,4 +16,4 @@
 
 
 # Q5) multikey range join, sub query
-# Q4에서 테스트 데이터를 제거해주세요
+# Q4에서 테스트 데이터를 제거해주세요 (tester : from ~ to 기간 동안 테스트 아이디였다는 뜻입니다)
