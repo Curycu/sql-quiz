@@ -1,4 +1,4 @@
-﻿# Q1) select, where
+# Q1) select, where
 # 모든 2017년 2월 이후 가입 고객의 id, status, signup을 표시해주세요
 select 
   id, status, signup
@@ -30,8 +30,7 @@ group by
 ;
 
 # Q4) where, group by, having, if, left join
-# 고객 status가 'active'이며 2017년 3월 이전 가입한 고객으로 한정하여  
-# 누적도서구매액이 1000원 이상, 도서수 2권 이상인 경우 grade 'A' 그 외 고객은 grade 'B'로  
+# 고객 status가 'active'이며 2017년 3월 이전 가입하였고 누적도서구매액이 1000원 이상인 경우 grade 'A' 그 외 고객은 grade 'B' 
 # 모든 고객에 대해 `user_id`, `signup`, `grade` 컬럼을 표시해주세요
 select
   u.id as `user_id`,
@@ -47,12 +46,11 @@ left join (
     and u.status = 'active' 
     and substring(u.signup, 1, 7) < '2017-03'
   group by ub.user_id
-  having sum(ub.price) >= 1000 
-    and count(*) >= 2) g on u.id = g.user_id
+  having sum(ub.price) >= 1000) g on u.id = g.user_id
 ;
 
 # Q5) multikey range join, sub query
-# Q4에서 테스트 데이터를 제거해주세요
+# Q4에서 테스트 데이터를 제거해주세요 (tester : from ~ to 기간 동안 테스트 아이디였다는 뜻입니다)﻿
 select
   u.id as `user_id`,
   u.signup,
