@@ -69,6 +69,5 @@ left join (
     from ba.interview_payment p
     join ba.interview_tester t on p.user_id = t.user_id and p.pay_date between t.`from` and t.`to`)
   group by ub.user_id
-  having sum(ub.price) >= 1000
-    and count(*) >= 2) g on u.id = g.user_id
+  having sum(ub.price) >= 1000) g on u.id = g.user_id
 ;
