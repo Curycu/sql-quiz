@@ -7,12 +7,12 @@
 
 
 -- Q3) left join, group by, sum, if
--- 모든 고객별 id, 누적리디캐시충전액, 누적기기구매액을 표시해주세요
+-- 모든 고객의 id, 누적리디캐시충전액, 누적기기구매액을 표시해주세요
 
  
 -- Q4) where, group by, if, left join
 -- 고객 status가 'active'이며 2017년 3월 이전 가입하였고 누적도서구매액이 1000원 이상인 경우 grade 'A' 그 외 고객은 grade 'B'
--- 모든 고객에 대해 `user_id`, `signup`, `status`, `cummulative_price`, `grade` 컬럼을 표시해주세요
+-- 모든 고객에 대해 `user_id`, `signup`, `status`, `cummulative_book_price`, `grade` 컬럼을 표시해주세요
 
  
 -- Q5) range join, sub query
