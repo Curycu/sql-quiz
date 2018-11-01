@@ -14,7 +14,7 @@ select
   year(pay_date), 
   month(pay_date), 
   count(distinct user_id) as user_count 
-from interview_payment 
+from ba.interview_payment 
 where pay_for = 'book' 
 group by 
   year(pay_date), 
@@ -48,7 +48,7 @@ left join (
   select 
     user_id, 
     sum(price) as price 
-  from interview_payment 
+  from ba.interview_payment 
   where pay_for = 'book'
   group by user_id) p on u.id = p.user_id
 ;
@@ -68,7 +68,7 @@ left join (
   select 
     p.user_id, 
     sum(p.price) as price 
-  from interview_payment p
+  from ba.interview_payment p
   left join ba.interview_tester t on p.user_id = t.user_id and p.pay_date between t.`from` and t.`to`
   where t.user_id is null
   and p.pay_for = 'book'
