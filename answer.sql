@@ -39,7 +39,7 @@ select
   u.id as `user_id`,
   u.signup,
   u.`status`,
-  p.price as `cummulative_price`,
+  p.price as `cummulative_book_price`,
   (case 
     when u.status = 'active' and u.signup < '2017-03-01 00:00:00' and p.price >= 1000 then 'A' 
     else 'B' end) as `grade`
@@ -59,7 +59,7 @@ select
   u.id as `user_id`,
   u.signup,
   u.`status`,
-  p.price as `cummulative_price`,
+  p.price as `cummulative_book_price`,
   (case 
     when u.status = 'active' and u.signup < '2017-03-01 00:00:00' and p.price >= 1000 then 'A' 
     else 'B' end) as `grade`
