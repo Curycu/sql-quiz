@@ -1,14 +1,12 @@
--- Q1) select, where
+-- Q1) hint: select, where
 -- 2017년 2월 이후 가입 고객의 id, status, signup을 표시해주세요
 select 
-  id, 
-  `status`, 
-  signup 
+  id, `status`, signup 
 from ba.interview_user 
 where signup >= '2017-02-01 00:00:00'
 ;
  
--- Q2) where, group by, count, distinct
+-- Q2) hint: group by, count, distinct
 -- 월별 도서구매고객수를 표시해주세요
 select 
   year(pay_date), 
@@ -21,7 +19,7 @@ group by
   month(pay_date)
 ;
  
--- Q3) left join, group by, sum, if
+-- Q3) hint: left join, sum, if
 -- 모든 고객의 id, 누적리디캐시충전액, 누적기기구매액을 표시해주세요
 select 
   u.id, 
@@ -32,7 +30,7 @@ left join ba.interview_payment p on u.id = p.user_id
 group by u.id
 ;
  
--- Q4) where, group by, if, left join
+-- Q4) hint: having, case when
 -- 고객 status가 'active'이며 2017년 3월 이전 가입하였고 누적도서구매액이 1000원 이상인 경우 grade 'A' 그 외 고객은 grade 'B'
 -- 모든 고객에 대해 `user_id`, `signup`, `status`, `cummulative_book_price`, `grade` 컬럼을 표시해주세요
 select 
@@ -53,7 +51,7 @@ left join (
   group by user_id) p on u.id = p.user_id
 ;
  
--- Q5) range join, sub query
+-- Q5) hint: multi-key join, range join
 -- Q4에서 테스트 데이터를 제거해주세요 (tester : from ~ to 기간 동안 테스트 아이디였다는 뜻입니다)
 select 
   u.id as `user_id`,
