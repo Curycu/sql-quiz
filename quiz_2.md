@@ -5,7 +5,7 @@ Q1) AB Test : GMV per Customer (related tables : `AB_Test`, `Sales`)
 
 Please calculate each AB Test group's average of GMV per Customer.  
 
-1. GMV = Gross Merchandise Value = sum of `sale_price`.  
+1. GMV = Gross Merchandise Value = Sales price of goods x number of goods sold.  
 2. `user_id` is unique for each ab-test. 
 3. Each customers' GMV should be calculated *after* test exposure case only.  
 4. There are customers *who buy nothing.* Let their GMV as 0.      
