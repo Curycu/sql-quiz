@@ -30,6 +30,5 @@ Please calculate daily promotion item count.
 1. Each promotion have start ~ end information at `Promotion` table.  
 2. `Promotion` table's `promotion_id` is unique.  
 3. For promotion <-> item mapping, you can refer `Promotion_Item`. 
-4. Items cannot be allocated to multiple promotions for same day. 
-5. `Calendar` table has every single days as a row.  
-6. Each columns of `Calendar` have date format strings as their value.  
+4. `Calendar` table has every single days as a row.  
+5. Each columns of `Calendar` have date format strings as their value.  
