@@ -27,9 +27,9 @@ Please calculate each AB Test group's average of GMV per Customer.
 `Example output format`     
 | test_id | group_id | avg_gmv_per_customer |
 |---------|----------|----------------------|
-| ab_1    | a        | 1003                 |  
-| ab_1    | b        | 1560                 |  
-| ab_2    | a        | 1001                 | 
+| ab_1    | a        | 103                  |  
+| ab_1    | b        | 150                  |  
+| ab_2    | a        | 1070                 | 
 
 ---
 
