@@ -1,6 +1,6 @@
 ![ERD](ERD_2.PNG)
 
-Q1) AB Test : GMV per Customer (related tables : `AB_Test`, `Sales`)  
+## Q1) AB Test : GMV per Customer 
 
 Please calculate each AB Test group's average of GMV per Customer.  
 
@@ -33,7 +33,7 @@ Please calculate each AB Test group's average of GMV per Customer.
 
 ---
 
-Q2) Funnel Key (related tables : `Page`, `Session`)  
+## Q2) Funnel Key 
 
 Please make a `funnel_id` <integer> column with below conditions :  
 
@@ -71,7 +71,7 @@ Please make a `funnel_id` <integer> column with below conditions :
   
 ---
 
-Q3) Daily Promotion Item Count (related tables : `Promotion`, `Promotion_Item`, `Calendar`)  
+## Q3) Daily Promotion Item Count  
 
 Please calculate daily promotion item count.  
 
