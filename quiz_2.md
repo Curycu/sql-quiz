@@ -24,7 +24,7 @@ Please calculate each AB Test group's average of GMV per Customer.
 | user_1  | item_2  | 1500 | 2022-10-25T10:22:17.121+09:00 |  
 | user_2  | item_3  | 300  | 2022-10-25T13:12:07.124+09:00 | 
 
-`Example output format`     
+`Output Format Example`     
 | test_id | group_id | avg_gmv_per_customer |
 |---------|----------|----------------------|
 | ab_1    | a        | 103                  |  
@@ -60,7 +60,7 @@ Please make a `funnel_id` <integer> column with below conditions :
 | se_1       | 4       | 2022-10-25T10:14:10.124+09:00 | 
 | se_1       | 1       | 2022-10-25T10:14:30.124+09:00 | 
 
-`Example output format`     
+`Output Format Example`     
 | session_id | page_id | visit_datetime                | funnel_id |   
 |------------|---------|-------------------------------|-----------|
 | se_1       | 1       | 2022-10-25T09:52:12.615+09:00 | 1         |
@@ -101,7 +101,7 @@ Please calculate daily promotion item count.
 | 2022 | 10 | 26 | 20221026 | 
 | 2022 | 10 | 27 | 20221027 | 
   
-`Example output format`     
+`Output Format Example`     
 | dt         | unique_item_count |
 |------------|-------------------|
 | 2022-10-25 | 102               |
