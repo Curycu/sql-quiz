@@ -6,7 +6,7 @@ Please calculate each AB Test group's average of GMV per Customer.
 
 1. `AB_Test` table have user allocation to test & group information.  
 2. `Sales` table is historical user sales table.    
-3. `user_id` is unique for each ab-test group. 
+3. `user_id` is unique for each ab-test. 
 4. Each customers' GMV should be calculated *after* test exposure case only.  
 5. There are customers *who buy nothing.* Let their GMV as 0.      
    
