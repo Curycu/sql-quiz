@@ -1,6 +1,9 @@
 ![ERD](ERD_2.PNG)
 
+> We assume you are using Presto  
+
 ## Q1) AB Test : GMV per Customer 
+> key checking : outer join, range filter, aggregation, null handling    
 
 Please calculate each AB Test group's average of GMV per Customer.  
 
@@ -10,14 +13,14 @@ Please calculate each AB Test group's average of GMV per Customer.
 4. Each customers' GMV should be calculated *after* test exposure case only.  
 5. There are customers *who buy nothing.* Let their GMV as 0.      
    
-`AB_Test`
+`AB_Test` sample view  
 | test_id | group_id | user_id | test_exposed_datetime         |  
 |---------|----------|---------|-------------------------------|
 | ab_1    | a        | user_1  | 2022-10-25T09:42:22.615+09:00 |  
 | ab_1    | a        | user_2  | 2022-10-25T09:42:27.121+09:00 |  
 | ab_1    | b        | user_3  | 2022-10-25T09:42:27.124+09:00 |  
 
-`Sales`     
+`Sales` sample view       
 | user_id | item_id | gmv  | order_datetime                |   
 |---------|---------|------|-------------------------------|
 | user_1  | item_1  | 500  | 2022-10-25T09:52:12.615+09:00 | 
@@ -34,6 +37,7 @@ Please calculate each AB Test group's average of GMV per Customer.
 ---
 
 ## Q2) Funnel Key 
+> key checking : window functions  
 
 Please make a `funnel_id` <integer> column with below conditions :  
 
@@ -43,7 +47,7 @@ Please make a `funnel_id` <integer> column with below conditions :
 4. Funnel is partition (non overlapped subsequence) of session : If session is over then funnel also over.   
 5. `funnel_id` starts with index 1, 2, 3 ... for each session.   
 
-`Page`
+`Page` sample view  
 | page_id | page_name | 
 |---------|-----------|
 | 1       | GW        |
@@ -51,7 +55,7 @@ Please make a `funnel_id` <integer> column with below conditions :
 | 3       | SDP       |
 | 4       | Thankyou  |
 
-`Session`     
+`Session` sample view       
 | session_id | page_id | visit_datetime                |   
 |------------|---------|-------------------------------|
 | se_1       | 1       | 2022-10-25T09:52:12.615+09:00 | 
@@ -72,6 +76,7 @@ Please make a `funnel_id` <integer> column with below conditions :
 ---
 
 ## Q3) Daily Promotion Item Count  
+> key checking : join with range condition, datetime handling  
 
 Please calculate daily promotion item count.  
 
@@ -80,21 +85,21 @@ Please calculate daily promotion item count.
 3. `Calendar` table has every single days as a row.  
 4. Each columns of `Calendar` have date format strings as their value.  
 
-`Promotion`
+`Promotion` sample view  
 | promotion_id | from                          | to                            | 
 |--------------|-------------------------------|-------------------------------|
 | promo_1      | 2022-10-23T19:52:12.615+09:00 | 2022-10-26T09:52:12.615+09:00 |  
 | promo_2      | 2022-10-15T10:22:17.121+09:00 | 2022-10-29T10:22:17.121+09:00 | 
 | promo_3      | 2022-10-20T13:12:07.124+09:00 | 2022-10-26T13:12:07.124+09:00 |
 
-`Promotion_Item`     
+`Promotion_Item` sample view       
 | promotion_id | item_id |
 |--------------|---------|
 | promo_1      | item_1  |
 | promo_1      | item_2  |
 | promo_2      | item_1  |
 
-`Calendar`     
+`Calendar` sample view       
 | yyyy | MM | dd | yyyyMMdd |
 |------|----|----|----------|
 | 2022 | 10 | 25 | 20221025 |
